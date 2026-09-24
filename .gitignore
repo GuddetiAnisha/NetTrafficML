@@ -1,4 +1,10 @@
 .venv/
 __pycache__/
 *.pyc
+.pytest_cache/
 models/*.joblib
+data/*.csv
+data/*.parquet
+outputs/*.json
+outputs/*.md
+outputs/*.csv
