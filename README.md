@@ -89,3 +89,47 @@ Python, Scikit-learn, Pandas, imbalanced-learn, Streamlit
 - Benchmarked CSV/Parquet storage and implemented saved-model inference, automated tests, and an interactive evaluation dashboard.
 
 Do not quote numerical model results in a CV until the project has been run and the metrics have been verified.
+
+
+## Traffic-aware RL resource optimisation extension
+
+A software-only reinforcement-learning extension has been added to study traffic-driven resource control for containerized/network workloads.
+
+### Scope
+
+- generates a reproducible 24-hour synthetic traffic curve with morning and evening peaks
+- models four abstract compute/resource levels
+- estimates software-side latency and energy cost for each traffic/resource combination
+- includes a fixed-resource baseline
+- includes a deterministic rule-based scaling baseline
+- trains a lightweight PPO agent using Stable-Baselines3
+- penalizes SLA latency violations, overload, excessive energy use and unnecessary resource switching
+- compares policies using total estimated energy, mean latency, SLA violations, overload steps, resource changes and cumulative reward
+- stores per-step traces and a policy comparison CSV for analysis
+- includes automated tests for traffic generation, latency/resource behaviour, energy trade-offs and environment execution
+
+This extension is intentionally **software-only**. It does not manipulate real CPU frequency, DVFS, CPU pinning, production RAN nodes, or Ericsson hardware. Energy values are simulation estimates for controlled experimentation rather than physical measurements.
+
+### Run the RL experiment
+
+```bash
+python src/rl_energy_control.py
+```
+
+Generated outputs include:
+
+```text
+outputs/rl_energy_comparison.csv
+outputs/rl_static_trace.csv
+outputs/rl_rule_trace.csv
+outputs/rl_ppo_trace.csv
+models/ppo_traffic_energy.zip
+```
+
+### CV-safe extension description
+
+- Extended NetTrafficML with a software-only PPO resource-optimisation experiment that reacts to synthetic daily traffic demand and selects abstract compute levels in real time.
+- Compared static, rule-based and PPO control using estimated energy consumption, latency, SLA violations, overload events, resource switching and cumulative reward.
+- Implemented the experiment with Gymnasium and Stable-Baselines3 and added reproducible traces and automated tests.
+
+Do not describe the extension as real DVFS, CPU pinning, physical power measurement, or production RAN control.
