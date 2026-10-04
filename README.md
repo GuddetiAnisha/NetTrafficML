@@ -2,7 +2,6 @@
 
  It focuses on supervised learning, imbalance handling, feature reduction, probabilistic prediction, regional generalization, and storage constraints for network-traffic modeling.
 
-> **Data note:** all traffic is synthetic and generated locally. This repository does not contain Ericsson data or claim access to real 5G production traces.
 
 ## What it covers
 
