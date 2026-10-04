@@ -1,6 +1,6 @@
 # NetTrafficML — Statistical ML for Network Traffic
 
-A complete portfolio/research prototype inspired by Ericsson Req ID 791323. It focuses on supervised learning, imbalance handling, feature reduction, probabilistic prediction, regional generalization, and storage constraints for network-traffic modeling.
+ It focuses on supervised learning, imbalance handling, feature reduction, probabilistic prediction, regional generalization, and storage constraints for network-traffic modeling.
 
 > **Data note:** all traffic is synthetic and generated locally. This repository does not contain Ericsson data or claim access to real 5G production traces.
 
